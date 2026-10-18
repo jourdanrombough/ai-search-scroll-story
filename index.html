@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How AI Search Chooses Its Sources | Optimization Theory</title>
+<meta name="description" content="See the eight stages AI search runs before it cites a page, from query fan-out to reranking, plus a citation simulator and a 90-day plan for technical SEOs.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Jourdan">
+<link rel="canonical" href="https://optimizationtheory.com/ai-citation-trace/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Optimization Theory">
+<meta property="og:title" content="How AI Search Chooses Its Sources">
+<meta property="og:description" content="An interactive walkthrough of the eight stages behind every AI citation, built for technical SEOs.">
+<meta property="og:url" content="https://optimizationtheory.com/ai-citation-trace/">
+<meta property="og:image" content="https://optimizationtheory.com/wp-content/uploads/og-1-pipeline.png">
+<meta property="og:image:secure_url" content="https://optimizationtheory.com/wp-content/uploads/og-1-pipeline.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How AI search chooses its sources: an eight-stage pipeline from Decide to Cite, with most pages dropping out along the way">
+<meta property="article:published_time" content="2026-10-17">
+<meta property="article:modified_time" content="2026-10-17">
+<meta property="article:author" content="Jourdan">
+<meta property="article:section" content="AI Search">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How AI Search Chooses Its Sources">
+<meta name="twitter:description" content="An interactive walkthrough of the eight stages behind every AI citation, built for technical SEOs.">
+<meta name="twitter:image" content="https://optimizationtheory.com/wp-content/uploads/og-1-pipeline.png">
+<meta name="twitter:image:alt" content="How AI search chooses its sources: an eight-stage pipeline from Decide to Cite, with most pages dropping out along the way">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://optimizationtheory.com/#organization", "name": "Optimization Theory", "url": "https://optimizationtheory.com/", "logo": {"@type": "ImageObject", "url": "https://optimizationtheory.com/wp-content/uploads/OT-Black-BKG.png", "width": 600, "height": 103}}, {"@type": "WebSite", "@id": "https://optimizationtheory.com/#website", "url": "https://optimizationtheory.com/", "name": "Optimization Theory", "publisher": {"@id": "https://optimizationtheory.com/#organization"}, "inLanguage": "en-US"}, {"@type": "Person", "@id": "https://optimizationtheory.com/#jourdan", "name": "Jourdan", "url": "https://optimizationtheory.com/", "image": "https://optimizationtheory.com/wp-content/uploads/Jourdan-Social-Avatar-Google.png", "worksFor": {"@id": "https://optimizationtheory.com/#organization"}, "knowsAbout": ["Search engine optimization", "Technical SEO", "Generative engine optimization", "Answer engine optimization"]}, {"@type": "ImageObject", "@id": "https://optimizationtheory.com/ai-citation-trace/#primaryimage", "url": "https://optimizationtheory.com/wp-content/uploads/og-1-pipeline.png", "contentUrl": "https://optimizationtheory.com/wp-content/uploads/og-1-pipeline.png", "width": 1200, "height": 630, "caption": "How AI search chooses its sources: an eight-stage pipeline from Decide to Cite, with most pages dropping out along the way"}, {"@type": "BreadcrumbList", "@id": "https://optimizationtheory.com/ai-citation-trace/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://optimizationtheory.com/"}, {"@type": "ListItem", "position": 2, "name": "How AI Search Chooses Its Sources", "item": "https://optimizationtheory.com/ai-citation-trace/"}]}, {"@type": "WebPage", "@id": "https://optimizationtheory.com/ai-citation-trace/#webpage", "url": "https://optimizationtheory.com/ai-citation-trace/", "name": "How AI Search Chooses Its Sources | Optimization Theory", "description": "See the eight stages AI search runs before it cites a page, from query fan-out to reranking, plus a citation simulator and a 90-day plan for technical SEOs.", "inLanguage": "en-US", "isPartOf": {"@id": "https://optimizationtheory.com/#website"}, "primaryImageOfPage": {"@id": "https://optimizationtheory.com/ai-citation-trace/#primaryimage"}, "image": {"@id": "https://optimizationtheory.com/ai-citation-trace/#primaryimage"}, "breadcrumb": {"@id": "https://optimizationtheory.com/ai-citation-trace/#breadcrumb"}, "datePublished": "2026-10-17", "dateModified": "2026-10-17"}, {"@type": "Article", "@id": "https://optimizationtheory.com/ai-citation-trace/#article", "headline": "How AI Search Chooses Its Sources", "description": "See the eight stages AI search runs before it cites a page, from query fan-out to reranking, plus a citation simulator and a 90-day plan for technical SEOs.", "mainEntityOfPage": {"@id": "https://optimizationtheory.com/ai-citation-trace/#webpage"}, "image": {"@id": "https://optimizationtheory.com/ai-citation-trace/#primaryimage"}, "author": {"@id": "https://optimizationtheory.com/#jourdan"}, "publisher": {"@id": "https://optimizationtheory.com/#organization"}, "datePublished": "2026-10-17", "dateModified": "2026-10-17", "inLanguage": "en-US", "isAccessibleForFree": true, "audience": {"@type": "Audience", "audienceType": "Technical SEOs"}, "about": [{"@type": "Thing", "name": "Generative engine optimization"}, {"@type": "Thing", "name": "Retrieval-augmented generation"}, {"@type": "Thing", "name": "AI search citations"}], "keywords": "AI search, AI citations, query fan-out, reranking, generative engine optimization, answer engine optimization, technical SEO", "citation": [{"@type": "CreativeWork", "name": "The rise of the AI crawler", "url": "https://vercel.com/blog/the-rise-of-the-ai-crawler", "publisher": {"@type": "Organization", "name": "Vercel"}}, {"@type": "ScholarlyArticle", "name": "GEO: Generative Engine Optimization", "url": "https://arxiv.org/abs/2311.09735"}, {"@type": "ScholarlyArticle", "name": "Lost in the Middle: How Language Models Use Long Contexts", "url": "https://arxiv.org/abs/2307.03172"}, {"@type": "WebPage", "name": "AI features and your website", "url": "https://developers.google.com/search/docs/appearance/ai-features"}], "relatedLink": ["https://optimizationtheory.com/ai-query-fan-out-deep-dive-infographic/", "https://optimizationtheory.com/2026-seo-aeo-geo-infographic/"]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one fixed particle stage behind the whole story. ~400 particles are "documents"; scroll position morphs them from scene to scene (cloud, gauge, fan-out, ranked lists, gate, embedding space, context window, answer, citations, simulator bins, page wireframe, schedule, crawler data, logo). Solid Google-color cards carry the words. Deliberately single-theme, night stage. */
+:root{
+  color-scheme:dark;
+  --night:#0E1014; --ink:#202124; --white:#FFFFFF; --muted:#9AA0A6;
+  --blue:#1A73E8; --red:#D93025; --yellow:#F9AB00; --green:#188038;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--white);font:16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:60;background:var(--night)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--white);outline-offset:3px;border-radius:6px}
+#stage{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+
+/* brand */
+.brandbar{position:relative;z-index:2;background:var(--night)}
+.brandbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px}
+.brandbar .logo{height:22px;width:auto;display:block}
+.byline{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.byline img{width:36px;height:36px;border-radius:50%;display:block;flex:none}
+.byline b{font:600 14px/1.2 var(--f-body);white-space:nowrap}
+
+/* chapter pill + progress */
+.hud{position:fixed;z-index:20;left:50%;top:calc(env(safe-area-inset-top, 0px) + 10px);transform:translate(-50%,-160%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;gap:10px;background:rgba(14,16,20,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:7px 14px 7px 8px;font:600 12px var(--f-mono);letter-spacing:.06em;white-space:nowrap;max-width:calc(100vw - 24px)}
+.hud.show{transform:translate(-50%,0)}
+.hud i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;color:var(--white);transition:background .4s}
+.hud .bar{width:64px;height:3px;border-radius:2px;background:rgba(255,255,255,.18);overflow:hidden}
+.hud .bar span{display:block;height:100%;width:0;background:var(--white)}
+
+/* steps */
+.story{position:relative;z-index:1}
+.step{min-height:100vh;display:flex;align-items:flex-end;padding-block:12vh 5vh}
+.step .wrap{width:100%}
+.card{background:var(--cb, var(--blue));color:var(--ct, var(--white));border-radius:22px;padding:20px 20px 22px;box-shadow:0 18px 50px -18px rgba(0,0,0,.7);max-width:440px;display:grid;gap:10px;transform:translateY(16px);opacity:.0001;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s ease}
+.step.in .card{transform:none;opacity:1}
+.card .k{font:600 11.5px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.card h2,.card h3{font:800 1.75rem/1.02 var(--f-display);letter-spacing:-.035em;margin:0;text-wrap:balance}
+.card p{margin:0;font-size:16px}
+.card .move{background:rgba(255,255,255,.16);border-radius:14px;padding:10px 12px;font-size:15px}
+.card.dk .move{background:rgba(32,33,36,.1)}
+.card .move b{display:block;font:600 10.5px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:2px}
+.card .src{font:500 11.5px var(--f-mono);opacity:.85}
+.card a.deep{font-weight:600;text-underline-offset:3px}
+
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding-block:7vh 6vh;position:relative;z-index:1;text-align:center}
+.hero .kicker{font:600 11.5px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font:800 clamp(2.6rem,12vw,5.6rem)/.93 var(--f-display);letter-spacing:-.045em;margin:14px auto 0;max-width:11ch;text-wrap:balance;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;background:var(--yellow);color:var(--ink);padding:0 .12em;border-radius:.12em;box-decoration-break:clone;-webkit-box-decoration-break:clone;text-shadow:none}
+.hero .dek{margin:16px auto 0;font-size:17px;max-width:30ch;color:#DADCE0;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.scrollcue{display:grid;justify-items:center;gap:8px;font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#DADCE0}
+.scrollcue .mouse{width:26px;height:40px;border:2px solid rgba(255,255,255,.6);border-radius:14px;position:relative}
+.scrollcue .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;border-radius:2px;background:var(--white);transform:translateX(-50%);animation:wheel 1.6s ease-in-out infinite}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+/* simulator step */
+.step.sim{min-height:190vh;align-items:stretch;padding-top:0}
+.step.sim .card{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 42vh);max-height:56vh;overflow:auto;overscroll-behavior:contain}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{border:0;background:rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;font-size:13.5px;cursor:pointer;min-height:36px}
+.chips button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
+.fld{display:grid;gap:0}
+.fld .lb{display:flex;justify-content:space-between;font-size:14.5px}
+.fld output{font:600 12.5px var(--f-mono)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;margin:0;touch-action:pan-y}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:rgba(255,255,255,.3)}
+input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,.3)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;background:var(--white);box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--white);border:0;cursor:pointer}
+.score{display:flex;align-items:baseline;gap:8px}
+.score b{font:800 2.6rem/1 var(--f-display);letter-spacing:-.04em}
+.score span{font:600 12px var(--f-mono);opacity:.9}
+.fix{font-size:14px;background:rgba(255,255,255,.16);border-radius:12px;padding:8px 10px}
+.fix b{font:600 10.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;display:block}
+
+/* after the story */
+.after{position:relative;z-index:2;background:var(--ink)}
+.sec{padding-block:64px 64px}
+.sh{display:grid;gap:8px;margin-bottom:24px;max-width:640px}
+.sh .n{font:600 12px var(--f-mono);letter-spacing:.14em;color:var(--muted)}
+.sh h2{font:800 clamp(2rem,8vw,3rem)/1 var(--f-display);letter-spacing:-.035em;margin:0}
+.sh p{margin:0;font-size:17px;color:#DADCE0}
+.igs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-inline:max(16px, env(safe-area-inset-left, 0px))}
+.igs::-webkit-scrollbar{display:none}
+.ig{flex:0 0 84%;scroll-snap-align:start;background:var(--white);color:var(--ink);border-radius:22px;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.peek{display:block;border:0;padding:0;margin:0;background:#F1F3F4;cursor:zoom-in;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden}
+.peek img{width:100%;height:auto;display:block}
+.peek .zoom{position:absolute;left:12px;bottom:12px;background:var(--ink);color:var(--white);font:600 12px var(--f-mono);padding:8px 12px;border-radius:999px}
+.igb{padding:18px 20px 22px;display:grid;gap:8px;align-content:start}
+.igb h3,.author h3{font:800 1.35rem/1.08 var(--f-display);letter-spacing:-.025em;margin:0}
+.igb p,.author p{margin:0;color:#5F6368;font-size:15px}
+.go{font:600 15px var(--f-body);color:var(--blue);text-decoration:none}
+.author{margin-top:16px;background:var(--white);color:var(--ink);border-radius:22px;padding:22px;display:grid;gap:12px}
+.author .top{display:flex;gap:14px;align-items:center}
+.author .av{width:72px;height:72px;border-radius:50%;flex:none}
+.author .k{font:600 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.alinks{display:flex;gap:18px;flex-wrap:wrap}
+footer{background:#17181A;color:#BDC1C6;padding-block:44px calc(env(safe-area-inset-bottom, 0px) + 44px);font-size:13px;position:relative;z-index:2}
+footer .wrap{display:grid;gap:12px}
+.fbrand{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid #3C4043}
+.fbrand>a:first-child img{height:24px;width:auto;display:block}
+footer ol{margin:0;padding-left:18px;display:grid;gap:4px}
+footer a{color:var(--white);text-underline-offset:3px}
+footer p{margin:0}
+.lbox{position:fixed;inset:0;z-index:80;background:rgba(14,16,20,.97);display:grid;grid-template-rows:auto minmax(0,1fr);padding-top:env(safe-area-inset-top, 0px)}
+.lbox[hidden]{display:none}
+.lb-bar{display:flex;gap:10px;align-items:center;padding-block:12px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.lb-bar b{font:700 15px/1.2 var(--f-display);flex:1;min-width:0}
+.lb-bar a{font:600 13px var(--f-body);white-space:nowrap}
+.lb-bar button{border:0;background:var(--white);color:var(--ink);border-radius:999px;padding:9px 14px;font:600 13px var(--f-body);cursor:pointer}
+.lb-scroll{overflow:auto;display:flex;justify-content:center;padding:0 10px calc(env(safe-area-inset-bottom, 0px) + 20px);overscroll-behavior:contain}
+.lb-scroll img{width:min(900px,100%);height:auto;border-radius:10px;align-self:flex-start}
+
+@media (max-width:819px){
+  .step{display:block;padding:0}
+  .step>.wrap{min-height:100vh;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:max(14px, env(safe-area-inset-bottom, 0px))}
+  .step:not(.sim) .card{position:sticky;bottom:max(14px, env(safe-area-inset-bottom, 0px));will-change:opacity}
+  .card{padding:16px 18px 18px;gap:8px;border-radius:20px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .card h2,.card h3{font-size:1.55rem}
+  .card p{font-size:15px;line-height:1.5}
+  .card .move{font-size:14px;padding:9px 11px;line-height:1.45}
+  .step.sim>.wrap{min-height:190vh;justify-content:flex-start;padding-bottom:0}
+  .step.sim .card{gap:6px}
+  .step.sim .fld .lb{font-size:13.5px}
+  .step.sim input[type=range]{height:30px}
+}
+@media (min-width:820px){
+  .brandbar .logo{height:28px}
+  .step{align-items:center;padding-block:10vh}
+  .card{max-width:400px;padding:26px 26px 28px}
+  .card h2,.card h3{font-size:2.2rem}
+  .step.sim .card{top:12vh;max-height:76vh}
+  .hero{text-align:left;justify-content:center;gap:40px}
+  .hero h1{margin-left:0;max-width:9ch}
+  .hero .dek{margin-left:0}
+  .scrollcue{justify-items:start}
+  .igs{display:grid;grid-template-columns:1fr 1fr;margin-inline:0;padding-inline:0;overflow:visible}
+  .ig{flex:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}.card{opacity:1;transform:none}}
+</style>
+
+</head>
+<body>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<div class="brandbar">
+  <div class="wrap">
+    <a href="https://optimizationtheory.com/" aria-label="Optimization Theory home"><img class="logo" src="brand/ot-logo.png" alt="Optimization Theory" width="600" height="103"></a>
+    <a class="byline" href="https://optimizationtheory.com/"><img src="brand/jourdan.webp" alt="Jourdan" width="36" height="36"><b>By Jourdan</b></a>
+  </div>
+</div>
+
+<div class="hud" id="hud" aria-hidden="true"><i id="hud-i">1</i><span id="hud-t">Decide</span><span class="bar"><span id="hud-b"></span></span></div>
+
+<main class="story" id="story">
+  <section class="hero" data-scene="hero">
+    <div class="wrap">
+      <div class="kicker">An Optimization Theory explainer</div>
+      <h1>How AI search <em>chooses</em> its sources</h1>
+      <p class="dek">Every dot is a web page. Scroll, and watch what happens to them.</p>
+    </div>
+    <div class="wrap"><div class="scrollcue"><span class="mouse"></span>Scroll</div></div>
+  </section>
+  <div id="steps"></div>
+</main>
+
+<div class="after">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sh"><span class="n">GO DEEPER</span><h2>Two field guides</h2><p>Optimization Theory infographics that pair with this story.</p></div>
+      <div class="igs">
+        <article class="ig">
+          <button class="peek" data-full="brand/fanout-full.webp" data-title="AI Query Fan-Out" data-href="https://optimizationtheory.com/ai-query-fan-out-deep-dive-infographic/" aria-label="View the full AI Query Fan-Out infographic"><img src="brand/fanout-peek.webp" alt="Top of the AI Query Fan-Out infographic" width="720" height="900" loading="lazy"><span class="zoom">View full infographic</span></button>
+          <div class="igb"><h3>AI Query Fan-Out: How Rankings Become Answers</h3><p>How one prompt becomes many searches, and what that means for coverage.</p><a class="go" href="https://optimizationtheory.com/ai-query-fan-out-deep-dive-infographic/">Read the deep dive &#8594;</a></div>
+        </article>
+        <article class="ig">
+          <button class="peek" data-full="brand/seo-aeo-geo-full.webp" data-title="2026 SEO + AEO + GEO Quick Reference" data-href="https://optimizationtheory.com/2026-seo-aeo-geo-infographic/" aria-label="View the full SEO AEO GEO quick reference infographic"><img src="brand/seo-aeo-geo-peek.webp" alt="Top of the 2026 SEO, AEO and GEO quick reference infographic" width="720" height="900" loading="lazy"><span class="zoom">View full infographic</span></button>
+          <div class="igb"><h3>2026 SEO + AEO + GEO Quick Reference</h3><p>A practical framework for visibility across search and AI.</p><a class="go" href="https://optimizationtheory.com/2026-seo-aeo-geo-infographic/">Read the guide &#8594;</a></div>
+        </article>
+      </div>
+      <div class="author">
+        <div class="top"><img class="av" src="brand/jourdan.webp" alt="Jourdan" width="72" height="72" loading="lazy"><div><span class="k">About the author</span><h3>Jourdan</h3></div></div>
+        <p>Jourdan runs Optimization Theory, an SEO and web development consultancy, and has spent more than 15 years in technical SEO. He publishes research and infographics on how search engines and AI answer engines choose their sources.</p>
+        <div class="alinks"><a class="go" href="https://optimizationtheory.com/">optimizationtheory.com &#8594;</a><a class="go" href="https://infographi.ac/">infographi.ac &#8594;</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand"><a href="https://optimizationtheory.com/"><img src="brand/ot-logo.png" alt="Optimization Theory" width="600" height="103" loading="lazy"></a><a class="byline" href="https://optimizationtheory.com/"><img src="brand/jourdan.webp" alt="" width="36" height="36" loading="lazy"><b>Jourdan</b></a></div>
+    <ol>
+      <li>Vercel, <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler">The rise of the AI crawler</a>, Dec 2024.</li>
+      <li>Aggarwal et al., <a href="https://arxiv.org/abs/2311.09735">GEO: Generative Engine Optimization</a>, KDD 2024.</li>
+      <li>Liu et al., <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a>, TACL 2024.</li>
+      <li>Google Search Central, <a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>.</li>
+      <li>Cormack, Clarke and Buettcher, Reciprocal Rank Fusion, SIGIR 2009.</li>
+    </ol>
+    <p>The example query, sources and counts are illustrative. The simulator uses made-up weights to show how the gates multiply. Crawler figures are real (Vercel, Dec 2024).</p>
+    <p style="color:#9AA0A6">&copy; 2026 Optimization Theory &middot; <a href="https://optimizationtheory.com/">optimizationtheory.com</a></p>
+  </div>
+</footer>
+
+<div class="lbox" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lbt">
+  <div class="lb-bar"><b id="lbt"></b><a id="lba" href="https://optimizationtheory.com/">Article &#8594;</a><button id="lbx" aria-label="Close">Close</button></div>
+  <div class="lb-scroll" id="lbs"><img id="lbi" alt=""></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s);
+function h(tag, attrs, ...kids){ const e=document.createElement(tag); if(attrs) for(const [k,v] of Object.entries(attrs)){ if(v==null||v===false) continue; if(k==='class') e.className=v; else if(k==='html') e.innerHTML=v; else if(k==='style') e.style.cssText=v; else if(k.startsWith('on')) e.addEventListener(k.slice(2),v); else e.setAttribute(k,v);} for(const k of kids.flat()){ if(k==null||k===false) continue; e.append(k.nodeType?k:document.createTextNode(String(k))); } return e; }
+function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hex = c => [parseInt(c.slice(1,3),16),parseInt(c.slice(3,5),16),parseInt(c.slice(5,7),16)];
+const COL = {blue:hex('#4285F4'), red:hex('#EA4335'), yellow:hex('#FBBC05'), green:hex('#34A853'), white:hex('#E8EAED'), dim:hex('#3C4043'), mid:hex('#80868B'), gray:hex('#9AA0A6')};
+const G4 = [COL.blue, COL.red, COL.yellow, COL.green];
+const CARD = {blue:['#1A73E8','#FFFFFF'], red:['#D93025','#FFFFFF'], yellow:['#F9AB00','#202124'], green:['#188038','#FFFFFF']};
+
+/* ---------- stage ---------- */
+const cv=$('#stage'), ctx=cv.getContext('2d');
+let W=0, H=0, DPR=1, MOB=true, N=320;
+const P=[];
+function sizeStage(){
+  const r=cv.getBoundingClientRect(); W=r.width; H=r.height; DPR=Math.min(2, devicePixelRatio||1);
+  cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0);
+  MOB = W<820;
+  cache.clear();
+}
+function initParticles(){
+  N = (innerWidth<820) ? 300 : 440;
+  const r=rng(11);
+  P.length=0;
+  for(let i=0;i<N;i++) P.push({x:r()*innerWidth, y:r()*innerHeight, r:255, g:255, b:255, s:2, a:0, n:r()*1000});
+}
+
+/* ---------- scene geometry helpers ---------- */
+const mk=(x,y,c,s,a)=>({x,y,c,s:s||2,a:a==null?1:a});
+function vbox(kind){
+  if(kind==='full') return {x:0,y:0,w:W,h:H};
+  if(MOB){
+    const top=Math.max(64, H*0.08);
+    if(kind==='sim') return {x:16,y:top,w:W-32,h:H*0.30};
+    return {x:16,y:top,w:W-32,h:H*0.41};
+  }
+  return {x:W*0.43, y:H*0.1, w:W*0.53, h:H*0.8};
+}
+function fillRect(n, x,y,w,h, r){ // grid points evenly inside rect
+  const pts=[]; if(n<=0) return pts;
+  const ratio=w/Math.max(1,h); let cols=Math.max(1,Math.round(Math.sqrt(n*ratio))); let rows=Math.ceil(n/cols);
+  for(let k=0;k<n;k++){ const c=k%cols, rr=Math.floor(k/cols); pts.push([x+(c+.5)*w/cols + (r?(r()-.5)*.6*w/cols:0), y+(rr+.5)*h/rows]); }
+  return pts;
+}
+function disk(n, cx,cy,R){ const pts=[]; const ga=Math.PI*(3-Math.sqrt(5)); for(let k=0;k<n;k++){ const rr=R*Math.sqrt((k+.5)/n); const t=k*ga; pts.push([cx+Math.cos(t)*rr, cy+Math.sin(t)*rr]); } return pts; }
+function distribute(total, weights){ const sum=weights.reduce((a,b)=>a+b,0); const out=weights.map(w=>Math.floor(total*w/sum)); let left=total-out.reduce((a,b)=>a+b,0); let i=0; while(left>0){ out[i%out.length]++; left--; i++; } return out; }
+function sampleCanvas(c, n, colorFrom){
+  const x=c.getContext('2d'); let d; try{ d=x.getImageData(0,0,c.width,c.height).data; }catch(e){ return null; }
+  const pts=[]; const step=Math.max(1, Math.floor(Math.sqrt(c.width*c.height/ (n*14))));
+  for(let yy=0; yy<c.height; yy+=step) for(let xx=0; xx<c.width; xx+=step){ const k=(yy*c.width+xx)*4; if(d[k+3]>140) pts.push([xx,yy, colorFrom?[d[k],d[k+1],d[k+2]]:null]); }
+  if(!pts.length) return null;
+  const r=rng(5); for(let i=pts.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [pts[i],pts[j]]=[pts[j],pts[i]]; }
+  return pts;
+}
+function textPoints(str, b, n){
+  const c=document.createElement('canvas'); c.width=Math.max(10,Math.round(b.w)); c.height=Math.max(10,Math.round(b.h));
+  const x=c.getContext('2d'); let fs=c.height*.78; x.font=`800 ${fs}px "Bricolage Grotesque", "Avenir Next", sans-serif`;
+  const m=x.measureText(str).width; if(m>c.width*.92){ fs*=c.width*.92/m; x.font=`800 ${fs}px "Bricolage Grotesque", "Avenir Next", sans-serif`; }
+  x.fillStyle='#fff'; x.textAlign='center'; x.textBaseline='middle'; x.fillText(str, c.width/2, c.height/2);
+  const pts=sampleCanvas(c, n, false); if(!pts) return [];
+  return pts.map(p=>[b.x+p[0], b.y+p[1]]);
+}
+let LOGO=null;
+function logoPoints(b, n){
+  if(!LOGO) return null;
+  const ar=LOGO.naturalWidth/LOGO.naturalHeight; let w=b.w*.92, hh=w/ar; if(hh>b.h*.5){ hh=b.h*.5; w=hh*ar; }
+  const c=document.createElement('canvas'); c.width=Math.round(w); c.height=Math.round(hh);
+  c.getContext('2d').drawImage(LOGO,0,0,c.width,c.height);
+  const pts=sampleCanvas(c, n, true); if(!pts) return null;
+  const ox=b.x+(b.w-w)/2, oy=b.y+(b.h-hh)/2 - b.h*.08;
+  return pts.map(p=>[ox+p[0], oy+p[1], p[2]]);
+}
+function fillPts(list, n, filler){ // ensure exactly n entries
+  while(list.length<n) list.push(filler(list.length));
+  return list.slice(0,n);
+}
+const dust = (b, seed)=>{ const r=rng(seed); return i=>mk(b.x+r()*b.w, b.y+r()*b.h, COL.dim, 1.2, 0); };
+
+/* ---------- scenes ---------- */
+const QL = ['best drones 2026','1-inch sensor','Part 107 rules','drone vs pole cam','under $1,000','wind resistance'];
+const SIM = {rank:55, cov:40, chunk:45, info:30, bots:true, csr:false};
+function simGates(){
+  const sig=x=>1/(1+Math.exp(-x)); const subs=Math.max(1,Math.round(SIM.cov/100*6)); const pS=sig((SIM.rank-60)/12); const fresh=100*Math.exp(-200/365);
+  return [1, 1-Math.pow(1-pS,subs), SIM.bots ? (SIM.csr?.15:.97) : .05, sig((.45*SIM.chunk+.35*SIM.cov+.2*fresh-50)/10), sig((.5*SIM.info+.3*55+.2*SIM.chunk-40)/10)];
+}
+const PERM=(()=>{ const r=rng(7331), a=Array.from({length:100},(_,i)=>i); for(let i=99;i>0;i--){ const j=Math.floor(r()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; })();
+
+const SCENES = {
+ hero(){ const b=vbox('full'); const r=rng(3); const cx=W*(MOB?.5:.68), cy=H*(MOB?.62:.5), R=Math.min(W,H)*(MOB?.62:.55);
+   const pts=[]; for(let i=0;i<N;i++){ const a=r()*Math.PI*2, d=Math.pow(r(),.6)*R; pts.push(mk(cx+Math.cos(a)*d*1.25, cy+Math.sin(a)*d*.8, r()<.5?COL.white:G4[i%4], 1+r()*2.4, .35+r()*.6)); }
+   return {pts, labels:[], glow:COL.blue}; },
+ decide(){ const b=vbox(); const cx=b.x+b.w/2, cy=b.y+b.h*.72, R=Math.min(b.w*.44, b.h*.62); const pts=[mk(cx,cy-R*.02,COL.white,0,0)]; const n=N-1; const r=rng(4);
+   for(let k=0;k<n;k++){ const f=k/n; const a=Math.PI+f*Math.PI; const rr=R+(r()-.5)*R*.12; pts.push(mk(cx+Math.cos(a)*rr, cy+Math.sin(a)*rr, f<.94?COL.blue:COL.dim, f<.94?2.4:1.8, f<.94?.95:.7)); }
+   return {pts, glow:COL.blue, labels:[{t:'0.94',x:cx,y:cy-R*.28,s:Math.min(64,R*.45),f:'d'},{t:'chance the AI searches the web',x:cx,y:cy-R*.02+4,s:12,f:'m',c:'#9AA0A6'},{t:'from memory',x:cx-R-R*.06,y:cy+22,s:11,f:'m',al:'left',c:'#80868B'},{t:'search',x:cx+R+R*.06,y:cy+22,s:11,f:'m',al:'right',c:'#8AB4F8'}]}; },
+ fanout(){ const b=vbox(); const pts=[]; const labels=[]; const lines=[]; let px,py, orbs=[];
+   const Ro=Math.min(b.w,b.h)*(MOB?.085:.075);
+   if(MOB){ px=b.x+b.w/2; py=b.y+b.h*.1; for(let k=0;k<6;k++){ const col=k%3,row=Math.floor(k/3); orbs.push([b.x+b.w*(.18+col*.32), b.y+b.h*(.46+row*.38)]); } }
+   else { px=b.x+b.w*.1; py=b.y+b.h*.5; for(let k=0;k<6;k++){ orbs.push([b.x+b.w*.62, b.y+b.h*(.1+k*.16)]); } }
+   pts.push(mk(px,py,COL.white,9,1));
+   const per=distribute(N-1,[1,1,1,1,1,1]);
+   orbs.forEach(([ox,oy],k)=>{ const c=G4[k%4]; disk(per[k],ox,oy,Ro).forEach(p=>pts.push(mk(p[0],p[1],c,2.2,.95))); lines.push({x1:px,y1:py,x2:ox,y2:oy,c}); labels.push(MOB?{t:QL[k],x:ox,y:oy+Ro+14,s:10.5,f:'m'}:{t:QL[k],x:ox+Ro+12,y:oy,s:13,f:'m',al:'left'}); });
+   labels.push(MOB?{t:'your prompt',x:px+16,y:py,s:11,f:'m',al:'left',c:'#9AA0A6'}:{t:'your prompt',x:px,y:py+26,s:12,f:'m',c:'#9AA0A6'});
+   return {pts, labels, lines, glow:COL.red}; },
+ retrieve(){ const b=vbox(); const pts=[]; const labels=[]; const cols=6, slots=10; const top=b.y+b.h*.12, sh=(b.h*.82)/slots, cw=b.w/cols; const per=distribute(N, Array(cols*slots).fill(1)); const r=rng(9); let idx=0;
+   for(let c=0;c<cols;c++){ const cx=b.x+cw*(c+.5); labels.push({t:'q'+(c+1),x:cx,y:top-14,s:11,f:'m',c:'#9AA0A6'});
+     for(let s=0;s<slots;s++){ const cy=top+sh*(s+.5); const n=per[idx++]; const bright=s<3; for(let k=0;k<n;k++) pts.push(mk(cx+(r()-.5)*cw*.5, cy+(r()-.5)*sh*.45, bright?G4[c%4]:COL.dim, bright?2.4:1.6, bright?.95:.55)); } }
+   labels.push({t:'top 3 per search move on',x:b.x+b.w/2,y:top+sh*3+4,s:11,f:'m',c:'#E8EAED',line:true,lx1:b.x,lx2:b.x+b.w});
+   return {pts, labels, glow:COL.yellow}; },
+ fetch(){ const b=vbox(); const pts=[]; const labels=[]; const gate=b.y+b.h*.6; const r=rng(13); const nD=Math.round(N*.3), nS=N-nD;
+   fillRect(nS, b.x+b.w*.04, b.y+b.h*.04, b.w*.92, gate-b.y-b.h*.12, null).forEach(p=>pts.push(mk(p[0],p[1],COL.green,2.1,.95)));
+   const piles=[['JS only',.18],['robots.txt',.5],['timeout',.82]]; const per=distribute(nD,[1.2,1,.8]);
+   piles.forEach(([t,fx],k)=>{ const cx=b.x+b.w*fx, by=b.y+b.h*.97; for(let j=0;j<per[k];j++){ const row=Math.floor(j/7), col=j%7; pts.push(mk(cx+(col-3)*7+(r()-.5)*2, by-row*7-4, COL.red,2,.85)); } labels.push({t,x:cx,y:by+14,s:11,f:'m',c:'#F28B82'}); });
+   labels.push({t:'readable pages, cut into passages',x:b.x+b.w/2,y:gate-b.h*.04,s:11,f:'m',c:'#81C995'});
+   return {pts, labels, gate:{y:gate,x1:b.x,x2:b.x+b.w}, glow:COL.green}; },
+ rerank(){ const b=vbox(); const cx=b.x+b.w/2, cy=b.y+b.h/2, R=Math.min(b.w,b.h)*.48; const r=rng(21); const pts=[mk(cx,cy,COL.white,6,1)];
+   for(let i=1;i<N;i++){ const a=r()*Math.PI*2; const d=R*(.1+.9*Math.pow(r(),.75)); const kept=d<R*.3, short=d<R*.52; pts.push(mk(cx+Math.cos(a)*d, cy+Math.sin(a)*d, kept?COL.yellow:short?COL.blue:COL.dim, kept?3.2:short?2.2:1.6, kept?1:short?.9:.6)); }
+   return {pts, rings:[{x:cx,y:cy,r:R*.3,c:'#FBBC05'},{x:cx,y:cy,r:R*.52,c:'#4285F4'}], labels:[{t:'kept by the reranker',x:cx,y:cy-R*.3-10,s:11,f:'m',c:'#FDD663'},{t:'closest by meaning',x:cx,y:cy-R*.52-10,s:11,f:'m',c:'#8AB4F8'}], glow:COL.blue}; },
+ pack(){ const b=vbox(); const pts=[]; const labels=[]; const bh=Math.min(MOB?70:110, b.h*.3); const y=b.y+b.h/2-bh/2; const segs=[['system',1400,COL.gray],['question',160,COL.white],['src',1600,COL.blue],['answer room',1200,COL.yellow],['free',1640,COL.dim]]; const tot=6000; const gap=4;
+   const per=distribute(N, segs.map(s=>s[1])); let x=b.x;
+   segs.forEach(([name,v,c],k)=>{ const w=b.w*v/tot-gap; if(name==='src'){ const sub=distribute(per[k],[1,1,1,1,1]); let sx=x; for(let j=0;j<5;j++){ const sw=(w-8)/5; fillRect(sub[j],sx,y,sw-2,bh,null).forEach(p=>pts.push(mk(p[0],p[1],c,2,1))); labels.push({t:'['+(j+1)+']',x:sx+sw/2,y:y-12,s:11,f:'m',c:'#8AB4F8'}); sx+=sw+2; } labels.push({t:'sources',x:x+w/2,y:y+bh+16,s:11,f:'m',c:'#8AB4F8'}); }
+     else { fillRect(per[k],x,y,Math.max(2,w),bh,null).forEach(p=>pts.push(mk(p[0],p[1],c,name==='free'?1.4:2,name==='free'?.5:.95))); if(name!=='question'&&name!=='free') labels.push({t:name,x:x+w/2,y:y+bh+16,s:11,f:'m',c:'#9AA0A6'}); }
+     x+=w+gap; });
+   labels.push({t:'context window · about 6,000 tokens',x:b.x+b.w/2,y:y-38,s:12,f:'m',c:'#E8EAED'});
+   return {pts, labels, glow:COL.red}; },
+ generate(){ const b=vbox(); const pts=[]; const labels=[]; const lines=MOB?7:8; const lh=b.h/(lines+1); const r=rng(31); const cites=[[0,'1'],[1,'3'],[3,'4'],[5,'1'],[6,'2']];
+   const nC=cites.length; const per=distribute(N-nC, Array(lines).fill(1));
+   for(let l=0;l<lines;l++){ const y=b.y+lh*(l+1); const len=(l===lines-1?.55:.88)*b.w; let x=b.x; const n=per[l]; let k=0; const words=[]; while(x<b.x+len){ const ww=18+r()*42; words.push([x,ww]); x+=ww+10; }
+     const pw=distribute(n, words.map(w=>w[1])); words.forEach(([wx,ww],wi)=>{ fillRect(pw[wi],wx,y-4,ww,8,null).forEach(p=>pts.push(mk(p[0],p[1],COL.white,1.7,.9))); }); }
+   cites.forEach(([l,t])=>{ const y=b.y+lh*(l+1); const x=b.x+(l===lines-1?.58:.92)*b.w; pts.push(mk(x,y,COL.blue,8,1)); labels.push({t,x,y:y+1,s:10,f:'m',c:'#FFFFFF'}); });
+   return {pts, labels, glow:COL.yellow}; },
+ cite(){ const b=vbox(); const pts=[]; const labels=[]; const big=[['aerialbench.com'],['part107prep.org'],['sensorlab.io'],['windtunnel-tests.com']]; const small=[['propertyshots.blog','read'],['listinglens.co','read'],['flytech-forum.net','read'],['skygearhub.com','never'],['realtorbrief.com','never'],['megadealsdrones.com','never']];
+   const nBig=Math.round(N*.62); const perB=distribute(nBig,[1,1,1,1]), perS=distribute(N-nBig,[1,1,1,1,1,1]);
+   const Rb=Math.min(b.w/(MOB?5.2:10), b.h*.17); const Rs=Rb*.42;
+   big.forEach(([d],k)=>{ const cx=MOB? b.x+b.w*(.25+(k%2)*.5) : b.x+b.w*(.125+k*.25); const cy=MOB? b.y+b.h*(.18+Math.floor(k/2)*.36) : b.y+b.h*.32; disk(perB[k],cx,cy,Rb).forEach(p=>pts.push(mk(p[0],p[1],COL.green,2.3,1))); labels.push({t:d,x:cx,y:cy+Rb+14,s:MOB?10.5:12,f:'m',c:'#E8EAED'}); });
+   small.forEach(([d,kind],k)=>{ const cx=b.x+b.w*(1/12+k/6); const cy=b.y+b.h*(MOB?.86:.78); disk(perS[k],cx,cy,Rs).forEach(p=>pts.push(mk(p[0],p[1],kind==='read'?COL.mid:COL.red,1.6,kind==='read'?.7:.55))); });
+   labels.push({t:'read but not cited',x:b.x+b.w*.25,y:b.y+b.h*(MOB?.86:.78)+Rs+16,s:10.5,f:'m',c:'#9AA0A6'}); labels.push({t:'never read',x:b.x+b.w*.75,y:b.y+b.h*(MOB?.86:.78)+Rs+16,s:10.5,f:'m',c:'#F28B82'});
+   return {pts, labels, glow:COL.green}; },
+ sim(){ const b=vbox('sim'); const pts=[]; const labels=[]; const P5=simGates(); let c=1; const surv=[100]; P5.forEach(p=>{ c*=p; surv.push(Math.round(c*100)); });
+   const bins=[0,0,0,0,0,0]; const outcome=new Array(100);
+   PERM.forEach((di,k)=>{ let g=5; for(let j=0;j<5;j++){ if(k>=surv[j+1]){ g=j; break; } } outcome[di]=g; bins[g]++; });
+   const names=MOB?['no index','missed','no fetch','reranked','read','cited']:['not indexed','not retrieved','fetch failed','cut at rerank','read only','cited']; const cols=[COL.dim,COL.blue,COL.red,COL.yellow,COL.mid,COL.green];
+   const cw=b.w/6; const d=Math.min(cw/6.2, (b.h-34)/21); const base=b.y+b.h-22; const fill=[0,0,0,0,0,0];
+   for(let i=0;i<100;i++){ const g=outcome[i]; const k=fill[g]++; const cx=b.x+cw*(g+.5); const col=k%5, row=Math.floor(k/5); pts.push(mk(cx+(col-2)*d, base-row*d-d/2, cols[g], g===5?d*.42:d*.34, g===5?1:.85)); }
+   const r=rng(55); for(let i=100;i<N;i++) pts.push(mk(b.x+r()*b.w, b.y+r()*b.h*.4, COL.dim, 1, .12));
+   names.forEach((n,g)=>{ labels.push({t:n,x:b.x+cw*(g+.5),y:base+12,s:MOB?8.5:11,f:'m',c:g===5?'#81C995':'#9AA0A6'}); labels.push({t:String(bins[g]),x:b.x+cw*(g+.5),y:base-Math.ceil(bins[g]/5)*d-10,s:MOB?11:13,f:'m',c:g===5?'#81C995':'#E8EAED'}); });
+   return {pts, labels, glow:COL.green, cited:bins[5], P5}; },
+ page(hi){ const b=vbox(); const pts=[]; const labels=[]; const ph=b.h*.98, pw=Math.min(b.w*(MOB?.6:.5), ph*.72); const px=MOB? b.x : b.x+b.w*.08, py=b.y+(b.h-ph)/2;
+   const BL=[['h1','Title & H1',.04,.06,.78],['meta','Byline & date',.12,.025,.42],['tldr','Answer summary',.17,.1,.92],['table','Key facts table',.3,.1,.92],['h2','Question H2 + answer',.43,.1,.92],['stat','Stat with source',.56,.06,.92],['quote','Expert quote',.65,.05,.7],['faq','FAQ',.73,.11,.86],['author','Author & sources',.87,.05,.6],['tech','SSR, robots.txt, schema',.95,.03,.92]];
+   const areas=BL.map(x=>x[3]*x[4]); const per=distribute(N-8, areas);
+   BL.forEach(([id,name,y,hh,w],k)=>{ const on=hi.includes(id); const rx=px+pw*.04, ry=py+ph*y, rw=pw*w*.92, rh=ph*hh; fillRect(per[k],rx,ry,rw,rh,null).forEach(p=>pts.push(mk(p[0],p[1], on?COL.yellow:COL.mid, on?2.2:1.5, on?1:.45)));
+     if(on) labels.push({t:name,x:px+pw+(MOB?10:22),y:ry+rh/2,s:MOB?11:13,f:'m',al:'left',c:'#FDD663',lead:{x1:rx+rw+4,x2:px+pw+(MOB?6:16),y:ry+rh/2}}); });
+   [[0,0],[1,0],[0,1],[1,1]].forEach(([a,c])=>{ pts.push(mk(px+a*pw,py+c*ph,COL.white,1.6,.5)); }); for(let i=0;i<4;i++) pts.push(mk(px+pw*(.25+i*.17), py, COL.white,1.4,.4));
+   return {pts, labels, frame:{x:px,y:py,w:pw,h:ph}, glow:COL.yellow}; },
+ sched(){ const b=vbox(); const pts=[]; const labels=[]; const rows=[['Access audit',1,2],['Fan-out map',2,4],['Citation tracking',3,4,1],['Restructure pages',4,9],['Entity cleanup',5,7],['Original data',6,12],['Earn mentions',8,13],['Measure & re-map',12,13]];
+   const lw=MOB?0:b.w*.26; const gx=b.x+lw, gw=b.w-lw; const wk=gw/13; const rh=b.h/(rows.length+1);
+   const lens=rows.map(r=>r[2]-r[1]+1+(r[3]?9*.3:0)); const per=distribute(N-13, lens);
+   rows.forEach(([n,s,e,dots],k)=>{ const y=b.y+rh*(k+1); const c=G4[k%4]; const nBar=dots? Math.round(per[k]*.75):per[k]; const bh=MOB?rh*.32:rh*.42; const by=MOB? y+rh*.08 : y-bh/2;
+     fillRect(nBar, gx+wk*(s-1)+2, by, wk*(e-s+1)-4, bh, null).forEach(p=>pts.push(mk(p[0],p[1],c,2,1)));
+     if(dots){ const nd=per[k]-nBar; for(let j=0;j<nd;j++){ const w=5+(j%9); pts.push(mk(gx+wk*(w-.5), by+bh/2, c, 2.6, 1)); } }
+     labels.push(MOB?(s>7?{t:n,x:gx+wk*e,y:by-8,s:10,f:'m',al:'right',c:'#DADCE0'}:{t:n,x:gx+wk*(s-1),y:by-8,s:10,f:'m',al:'left',c:'#DADCE0'}):{t:n,x:b.x,y:by+bh/2,s:12.5,f:'m',al:'left',c:'#DADCE0'}); });
+   for(let w=0;w<13;w++){ pts.push(mk(gx+wk*(w+.5), b.y+rh*.35, COL.dim, 1.6, .8)); if(w%3===0||w===12) labels.push({t:'W'+(w+1),x:gx+wk*(w+.5),y:b.y+rh*.35-12,s:10,f:'m',c:'#80868B'}); }
+   return {pts, labels, glow:COL.green}; },
+ big28(){ const b=vbox(); const tb={x:b.x,y:b.y,w:b.w,h:b.h*.7}; const pts=textPoints('28%', tb, N).map(p=>mk(p[0],p[1],COL.blue,2.2,1)); const out=fillPts(pts,N,dust(b,61));
+   return {pts:out, labels:[{t:'AI crawler fetches as a share of Googlebot’s',x:b.x+b.w/2,y:b.y+b.h*.8,s:MOB?12:15,f:'m',c:'#E8EAED'}], glow:COL.blue}; },
+ crawlers(){ const b=vbox(); const pts=[]; const labels=[]; const rows=[['Googlebot',4500,COL.gray,'4.5B'],['GPTBot',569,COL.blue,'569M'],['Claude',370,COL.red,'370M'],['AppleBot',314,COL.yellow,'314M'],['PerplexityBot',24.4,COL.green,'24.4M']];
+   const lw=MOB?b.w*.3:b.w*.24; const maxW=b.w-lw-60; const rh=b.h/(rows.length+.5); const bh=Math.min(28,rh*.5);
+   const lens=rows.map(r=>Math.max(.012, r[1]/4500)); const per=distribute(N, lens);
+   rows.forEach(([n,v,c,t],k)=>{ const y=b.y+rh*(k+.75); const w=Math.max(4, maxW*v/4500); fillRect(per[k], b.x+lw, y-bh/2, w, bh, null).forEach(p=>pts.push(mk(p[0],p[1],c,2,1)));
+     labels.push({t:n,x:b.x,y,s:MOB?11:13,f:'m',al:'left',c:'#DADCE0'}); labels.push({t,x:b.x+lw+w+8,y,s:MOB?11:13,f:'m',al:'left',c:'#FFFFFF'}); });
+   return {pts, labels, glow:COL.blue}; },
+ jsRings(){ const b=vbox(); const pts=[]; const labels=[]; const R=Math.min(b.w*.2, b.h*.3); const rings=[[11.5,COL.blue,'ChatGPT'],[23.8,COL.red,'Claude']]; const per=distribute(N,[1,1]); const r=rng(71);
+   rings.forEach(([v,c,n],k)=>{ const cx=b.x+b.w*(.27+k*.46), cy=b.y+b.h*.45; for(let j=0;j<per[k];j++){ const f=j/per[k]; const a=-Math.PI/2+f*Math.PI*2; const rr=R+(r()-.5)*R*.16; const on=f<v/100; pts.push(mk(cx+Math.cos(a)*rr, cy+Math.sin(a)*rr, on?c:COL.dim, on?2.6:1.7, on?1:.6)); }
+     labels.push({t:v+'%',x:cx,y:cy,s:Math.min(30,R*.42),f:'d'}); labels.push({t:n,x:cx,y:cy+R+20,s:MOB?11:13,f:'m',c:'#DADCE0'}); });
+   labels.push({t:'of fetches were JavaScript files. Neither bot runs them.',x:b.x+b.w/2,y:b.y+b.h*.95,s:MOB?10.5:13,f:'m',c:'#9AA0A6'});
+   return {pts, labels, glow:COL.red}; },
+ fourOh(){ const b=vbox(); const pts=[]; const labels=[]; const rows=[['ChatGPT',34.82,COL.red],['Claude',34.16,COL.red],['Googlebot',8.22,COL.gray]]; const lw=MOB?b.w*.26:b.w*.2; const maxW=b.w-lw-70; const rh=b.h/(rows.length+.6); const bh=Math.min(40,rh*.42);
+   const per=distribute(N, rows.map(r=>r[1]));
+   rows.forEach(([n,v,c],k)=>{ const y=b.y+rh*(k+.8); const w=maxW*v/40; fillRect(per[k], b.x+lw, y-bh/2, w, bh, null).forEach(p=>pts.push(mk(p[0],p[1],c,2.2,1))); labels.push({t:n,x:b.x,y,s:MOB?11.5:13,f:'m',al:'left',c:'#DADCE0'}); labels.push({t:v+'%',x:b.x+lw+w+10,y,s:MOB?12:14,f:'m',al:'left',c:'#FFFFFF'}); });
+   labels.push({t:'share of fetches that hit a 404',x:b.x+b.w/2,y:b.y+8,s:MOB?11:13,f:'m',c:'#9AA0A6'});
+   return {pts, labels, glow:COL.red}; },
+ finale(){ const b=vbox(); const tb={x:b.x,y:b.y,w:b.w,h:b.h*.68}; const raw=textPoints('[1]', tb, N);
+   const xs=raw.map(p=>p[0]); const x0=Math.min(...xs), x1=Math.max(...xs);
+   const pts=raw.map(p=>{ const f=(p[0]-x0)/Math.max(1,x1-x0); return mk(p[0],p[1], f<.3?COL.blue:f<.7?COL.green:COL.yellow, 2.3, 1); });
+   return {pts:fillPts(pts,N,dust(b,77)), labels:[{t:'be the source they cite',x:b.x+b.w/2,y:b.y+b.h*.8,s:MOB?13:16,f:'m',c:'#E8EAED'}], glow:COL.blue}; }
+};
+
+/* ---------- story steps ---------- */
+const STEPS = [
+ {sc:'decide', c:'blue', k:'Stage 1 of 8 · Decide', h:'Does it even search?', p:'Before anything else, the model decides whether it needs fresh evidence from the web or can answer from memory.', m:'Target prompts that force a search: fresh, comparative, data-driven or high-stakes.'},
+ {sc:'fanout', c:'red', k:'Stage 2 of 8 · Fan-out', h:'One prompt becomes six searches', p:'The model rewrites your question into sub-queries, one per angle, and runs each one on its own.', m:'Map the likely sub-queries and give each one a headed section or its own page.', link:['Deep dive: the fan-out infographic','https://optimizationtheory.com/ai-query-fan-out-deep-dive-infographic/']},
+ {sc:'retrieve', c:'yellow', k:'Stage 3 of 8 · Retrieve', h:'Each search pulls a ranked list', p:'Only the top handful from each list moves on. Pages that show up for many sub-queries rise when the lists are fused.', m:'Classic SEO is the entry ticket. Rank for the sub-queries in the index each engine uses, Bing included.'},
+ {sc:'fetch', c:'green', k:'Stage 4 of 8 · Fetch', h:'A third of pages never get read', p:'Pages are fetched as raw HTML and cut into passages. JS-only pages, blocked bots and slow servers fall through.', m:'Server-render the content, allow AI search bots, and keep key facts in plain HTML.'},
+ {sc:'rerank', c:'blue', k:'Stage 5 of 8 · Rerank', h:'Passages compete, not pages', p:'Every passage is scored against the question. Only the closest few survive the reranker.', m:'Write passages that stand alone: name the subject, answer first, include the number.'},
+ {sc:'pack', c:'red', k:'Stage 6 of 8 · Pack', h:'A tiny context window', p:'The survivors are packed into the prompt, each with a source number the model can cite.', m:'Be concise and fact-dense so your passage carries the answer in a small budget.'},
+ {sc:'generate', c:'yellow', k:'Stage 7 of 8 · Generate', h:'The answer gets written', p:'The model writes from the passages and drops citation markers as it goes. Research found statistics, quotes and cited sources lifted visibility by up to 40%.', m:'Give it quotable material: specific numbers, named sources and clear claims.'},
+ {sc:'cite', c:'green', k:'Stage 8 of 8 · Cite', h:'4 of 10 pages get the link', p:'Most pages that were retrieved, and even read, never get credited.', m:'Track retrieved vs cited. Claims only you make are the hardest to credit to someone else.'},
+ {sc:'sim', c:'blue', k:'Try it', h:'Will your page get cited?', sim:true},
+ {sc:'pageA', c:'yellow', k:'Build the page · 1 of 3', hud:'Page 1/3', h:'Lead with the answer', p:'Title in the words people use, a named author with a real date, then a 2 to 4 sentence answer right under the H1.', m:'The answer summary is often the best-scoring passage on the page.'},
+ {sc:'pageB', c:'yellow', k:'Build the page · 2 of 3', hud:'Page 2/3', h:'One section per sub-query', p:'Question-style H2s that answer in the first sentence, a real HTML table, a stat with its source, and a named expert quote.', m:'Each block becomes its own passage, so each one has to make sense alone.'},
+ {sc:'pageC', c:'yellow', k:'Build the page · 3 of 3', hud:'Page 3/3', h:'Catch the long tail', p:'An FAQ for leftover sub-queries, an author box with sources, and a technical layer the fetcher can actually read.', m:'Server-rendered HTML and AI bots allowed in robots.txt, or none of it counts.', link:['The big picture: SEO + AEO + GEO','https://optimizationtheory.com/2026-seo-aeo-geo-infographic/']},
+ {sc:'sched', c:'green', k:'Schedule', h:'A 90-day rollout', p:'Unblock access in week 1, map the fan-out, baseline citations, then rewrite top pages and build original data. Track citations weekly after week 4.', m:'Refresh "best of" pages monthly, stats quarterly and guides twice a year, only when facts change.'},
+ {sc:'big28', c:'blue', k:'The numbers · Real data', h:'AI crawlers are already big', p:'GPTBot, Claude, AppleBot and PerplexityBot together made 1.28B fetches a month on Vercel’s network, against 4.5B for Googlebot.', src:'Source: Vercel, Dec 2024'},
+ {sc:'crawlers', c:'blue', k:'The numbers · Real data', h:'Monthly fetches by crawler', p:'Googlebot still dominates, but GPTBot alone is past half a billion fetches a month.', src:'Source: Vercel, Dec 2024'},
+ {sc:'jsRings', c:'red', k:'The numbers · Real data', h:'They fetch JavaScript, then ignore it', p:'JS files were 11.5% of ChatGPT’s fetches and 23.8% of Claude’s. Neither executes them, so client-rendered content is invisible.', src:'Source: Vercel, Dec 2024'},
+ {sc:'fourOh', c:'red', k:'The numbers · Real data', h:'And they hit far more 404s', p:'About 35% of ChatGPT and Claude fetches hit a 404, versus 8% for Googlebot. Clean redirects and sitemaps matter.', src:'Source: Vercel, Dec 2024'},
+ {sc:'finale', c:'blue', k:'Optimization Theory', h:'Want your pages cited?', p:'Jourdan has spent 15+ years in technical SEO and now helps brands get chosen by AI search.', link:['optimizationtheory.com','https://optimizationtheory.com/']}
+];
+const SCENE_FN = sc => sc==='pageA' ? ()=>SCENES.page(['h1','meta','tldr']) : sc==='pageB' ? ()=>SCENES.page(['table','h2','stat','quote']) : sc==='pageC' ? ()=>SCENES.page(['faq','author','tech']) : SCENES[sc];
+const cache = new Map();
+function scene(sc){ if(!cache.has(sc)) cache.set(sc, SCENE_FN(sc)()); return cache.get(sc); }
+
+const stepsEl=$('#steps');
+const stepEls = STEPS.map((s,i)=>{
+  const [cb,ct]=CARD[s.c];
+  const card = h('div',{class:'card'+(s.c==='yellow'?' dk':''), style:`--cb:${cb};--ct:${ct}`}, h('span',{class:'k'}, s.k), h(i===0?'h2':'h3',{}, s.h));
+  if(s.sim){
+    card.append(
+      h('div',{class:'score'}, h('b',{id:'s-num'},'0'), h('span',{},'of 100 runs cite this page')),
+      h('div',{class:'fix', id:'s-fix'}),
+      h('div',{class:'chips', id:'s-pre'}),
+      ...[['rank','Organic ranking'],['cov','Fan-out coverage'],['chunk','Answer-first passages'],['info','Original data & quotes']].map(([k,l])=>h('div',{class:'fld'}, h('div',{class:'lb'}, h('label',{for:'s-'+k}, l), h('output',{id:'o-'+k}, String(SIM[k]))), h('input',{type:'range', id:'s-'+k, min:0, max:100, value:SIM[k]}))),
+      h('div',{class:'chips'}, h('button',{id:'s-bots','aria-pressed':'true'},'AI bots allowed'), h('button',{id:'s-csr','aria-pressed':'false'},'JS-only rendering')),
+      h('p',{class:'src'},'Illustrative model with made-up weights.'));
+  } else {
+    card.append(h('p',{}, s.p));
+    if(s.m) card.append(h('div',{class:'move'}, h('b',{},'SEO move'), s.m));
+    if(s.src) card.append(h('span',{class:'src'}, s.src));
+    if(s.link) card.append(h('a',{class:'deep', href:s.link[1]}, s.link[0]+' →'));
+  }
+  const el=h('section',{class:'step'+(s.sim?' sim':''), 'data-i':i}, h('div',{class:'wrap'}, card));
+  stepsEl.append(el); return el;
+});
+const heroEl=$('.hero');
+
+/* ---------- simulator wiring ---------- */
+const GN=['Indexed','Retrieved','Fetched','Survives rerank','Cited'];
+const FIX=['Get into the index each engine queries.','Rank for more of the fan-out with a section per sub-intent.','Server-render content and allow AI search bots.','Rewrite key sections answer-first so each passage stands alone.','Add first-party numbers, named sources and quotable claims.'];
+function updateSim(){ cache.delete('sim'); const s=scene('sim'); $('#s-num').textContent=s.cited; let bn=0; s.P5.forEach((p,i)=>{ if(p<s.P5[bn]) bn=i; });
+  const f=$('#s-fix'); f.replaceChildren(s.P5[bn]<.9 ? h('b',{},'Fix first: '+GN[bn]) : h('b',{},'No bottleneck'), s.P5[bn]<.9 ? FIX[bn] : 'Every gate passes at 90% or better.'); }
+['rank','cov','chunk','info'].forEach(k=>{ const el=$('#s-'+k); el.addEventListener('input',()=>{ SIM[k]=+el.value; $('#o-'+k).textContent=el.value; [...$('#s-pre').children].forEach(c=>c.setAttribute('aria-pressed','false')); updateSim(); }); });
+[['s-bots','bots'],['s-csr','csr']].forEach(([id,k])=>$('#'+id).addEventListener('click',e=>{ SIM[k]=!SIM[k]; e.currentTarget.setAttribute('aria-pressed', String(SIM[k])); updateSim(); }));
+const PRE=[['Typical post',{rank:55,cov:40,chunk:45,info:30,bots:true,csr:false}],['JS app',{rank:70,cov:55,chunk:50,info:45,bots:true,csr:true}],['Data study',{rank:62,cov:75,chunk:88,info:90,bots:true,csr:false}],['Blocks bots',{rank:80,cov:70,chunk:70,info:70,bots:false,csr:false}]];
+PRE.forEach(([n,v],k)=>$('#s-pre').append(h('button',{'aria-pressed':k===0?'true':'false', onclick:e=>{ Object.assign(SIM,v); ['rank','cov','chunk','info'].forEach(x=>{ $('#s-'+x).value=v[x]; $('#o-'+x).textContent=v[x]; }); $('#s-bots').setAttribute('aria-pressed',String(v.bots)); $('#s-csr').setAttribute('aria-pressed',String(v.csr)); [...$('#s-pre').children].forEach(c=>c.setAttribute('aria-pressed', c===e.currentTarget?'true':'false')); updateSim(); }}, n)));
+
+/* ---------- scroll state ---------- */
+const smooth = t => t*t*(3-2*t);
+let A='hero', B='hero', blend=0, active=-1, glowRGB=[66,133,244];
+function readScroll(){
+  const vh=innerHeight;
+  const seq=[heroEl, ...stepEls]; const ids=['hero', ...STEPS.map(s=>s.sc)];
+  let cur=0; const rects=seq.map(e=>e.getBoundingClientRect());
+  for(let i=0;i<seq.length;i++){ if(rects[i].top <= vh*0.02) cur=i; }
+  const r=rects[cur]; const span = (cur<seq.length-1) ? (rects[cur+1].top - r.top) : r.height;
+  let p = Math.min(1, Math.max(0, -r.top / Math.max(1, span)));
+  const isSim = cur>0 && STEPS[cur-1].sim;
+  const startBlend = isSim ? .82 : .45;
+  A=ids[cur]; B=ids[Math.min(cur+1, ids.length-1)]; blend = cur<ids.length-1 ? smooth(Math.min(1,Math.max(0,(p-startBlend)/(1-startBlend-0.05)))) : 0;
+  // which card is "in"
+  stepEls.forEach((e,i)=>{ const rr=rects[i+1]; const on = rr.top < vh*.85 && rr.bottom > vh*.15; e.classList.toggle('in', on);
+    if(MOB && !e.classList.contains('sim')){ const c=e._card||(e._card=e.querySelector('.card')); if(on){ const o=Math.max(0,Math.min(1,(rr.bottom-vh*.42)/(vh*.38))); c.style.opacity=o.toFixed(3); } } });
+  const shown = blend>.5 ? Math.min(cur+1, ids.length-1) : cur;
+  const hud=$('#hud'); const inStory = shown>0 && rects[seq.length-1].bottom > vh*.4;
+  hud.classList.toggle('show', inStory);
+  if(shown!==active){ active=shown; if(shown>0){ const s=STEPS[shown-1]; $('#hud-i').textContent=String(shown); $('#hud-i').style.background=CARD[s.c][0]; $('#hud-t').textContent=s.hud||s.k.split('·').pop().trim(); } }
+  $('#hud-b').style.width = (Math.min(1,(cur+p)/(ids.length-1))*100)+'%';
+}
+
+/* ---------- render loop ---------- */
+function lerp(a,b,t){ return a+(b-a)*t; }
+function drawLabels(L, alpha){
+  if(!L || alpha<=.01) return;
+  for(const l of L){
+    ctx.globalAlpha=alpha*(l.a==null?1:l.a);
+    if(l.lead){ ctx.strokeStyle=l.c||'#fff'; ctx.lineWidth=1; ctx.globalAlpha=alpha*.5; ctx.beginPath(); ctx.moveTo(l.lead.x1,l.lead.y); ctx.lineTo(l.lead.x2,l.lead.y); ctx.stroke(); ctx.globalAlpha=alpha; }
+    if(l.line){ ctx.strokeStyle='rgba(232,234,237,.4)'; ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(l.lx1,l.y+8); ctx.lineTo(l.lx2,l.y+8); ctx.stroke(); ctx.setLineDash([]); }
+    ctx.fillStyle=l.c||'#FFFFFF'; ctx.textAlign=l.al||'center'; ctx.textBaseline='middle';
+    ctx.font = l.f==='d' ? `800 ${l.s}px "Bricolage Grotesque", sans-serif` : `600 ${l.s}px "IBM Plex Mono", monospace`;
+    ctx.fillText(l.t, l.x, l.y);
+  }
+}
+function drawExtras(S, alpha){
+  if(!S || alpha<=.01) return;
+  ctx.globalAlpha=alpha*.55; ctx.lineWidth=1.4;
+  (S.lines||[]).forEach(l=>{ ctx.strokeStyle=`rgb(${l.c.join(',')})`; ctx.beginPath(); ctx.moveTo(l.x1,l.y1); const mx=(l.x1+l.x2)/2; ctx.bezierCurveTo(MOB?l.x1:mx,MOB?(l.y1+l.y2)/2:l.y1, MOB?l.x2:mx,MOB?(l.y1+l.y2)/2:l.y2, l.x2,l.y2); ctx.stroke(); });
+  (S.rings||[]).forEach(r=>{ ctx.strokeStyle=r.c; ctx.setLineDash([4,5]); ctx.beginPath(); ctx.arc(r.x,r.y,r.r,0,Math.PI*2); ctx.stroke(); ctx.setLineDash([]); });
+  if(S.gate){ ctx.strokeStyle='rgba(232,234,237,.55)'; ctx.setLineDash([6,6]); ctx.beginPath(); ctx.moveTo(S.gate.x1,S.gate.y); ctx.lineTo(S.gate.x2,S.gate.y); ctx.stroke(); ctx.setLineDash([]); }
+  if(S.frame){ ctx.strokeStyle='rgba(232,234,237,.35)'; ctx.globalAlpha=alpha*.8; const f=S.frame; ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(f.x-6,f.y-6,f.w+12,f.h+12,12); else ctx.rect(f.x-6,f.y-6,f.w+12,f.h+12); ctx.stroke(); }
+}
+let last=0;
+function frame(t){
+  const dt=Math.min(.05,(t-(last||t))/1000); last=t;
+  readScroll();
+  const SA=scene(A), SB=scene(B);
+  const gl=[lerp(SA.glow[0],SB.glow[0],blend), lerp(SA.glow[1],SB.glow[1],blend), lerp(SA.glow[2],SB.glow[2],blend)];
+  for(let k=0;k<3;k++) glowRGB[k]=lerp(glowRGB[k], gl[k], Math.min(1,dt*3));
+  ctx.globalAlpha=1; ctx.fillStyle='#0E1014'; ctx.fillRect(0,0,W,H);
+  const gx = MOB? W/2 : W*.68, gy = MOB? H*.3 : H*.5;
+  const grd=ctx.createRadialGradient(gx,gy,0,gx,gy,Math.max(W,H)*.7); grd.addColorStop(0,`rgba(${glowRGB.map(Math.round).join(',')},.20)`); grd.addColorStop(1,'rgba(14,16,20,0)'); ctx.fillStyle=grd; ctx.fillRect(0,0,W,H);
+  drawExtras(SA, 1-blend); drawExtras(SB, blend);
+  const k = RM ? 1 : Math.min(1, dt*7.5);
+  const tt=t/1000;
+  for(let i=0;i<N;i++){
+    const p=P[i], a=SA.pts[i], b=SB.pts[i];
+    const q = blend<=0?0:blend>=1?1:smooth(Math.min(1,Math.max(0, blend*1.5 - (p.n%1)*.5)));
+    const tx=lerp(a.x,b.x,q), ty=lerp(a.y,b.y,q);
+    const jig = RM?0: (A==='hero'&&B==='hero'? 6 : 1.2);
+    p.x += (tx + Math.sin(tt*.9+p.n)*jig - p.x)*k; p.y += (ty + Math.cos(tt*.8+p.n*1.3)*jig - p.y)*k;
+    const cr=lerp(a.c[0],b.c[0],q), cg=lerp(a.c[1],b.c[1],q), cb=lerp(a.c[2],b.c[2],q);
+    p.r+= (cr-p.r)*k; p.g+=(cg-p.g)*k; p.b+=(cb-p.b)*k;
+    const s=lerp(a.s,b.s,q), al=lerp(a.a,b.a,q); p.s+=(s-p.s)*k; p.a+=(al-p.a)*k;
+    if(p.a<.02) continue;
+    ctx.globalAlpha=p.a; ctx.fillStyle=`rgb(${p.r|0},${p.g|0},${p.b|0})`;
+    if(p.s>4){ ctx.globalAlpha=p.a*.22; ctx.beginPath(); ctx.arc(p.x,p.y,p.s*2.2,0,Math.PI*2); ctx.fill(); ctx.globalAlpha=p.a; }
+    ctx.beginPath(); ctx.arc(p.x,p.y,Math.max(.6,p.s),0,Math.PI*2); ctx.fill();
+  }
+  drawLabels(SA.labels, Math.max(0,1-blend/.35)); drawLabels(SB.labels, Math.max(0,(blend-.65)/.35));
+  ctx.globalAlpha=1;
+  requestAnimationFrame(frame);
+}
+
+/* ---------- lightbox ---------- */
+const lb=$('#lb'); let lbF=null;
+document.querySelectorAll('.peek').forEach(b=>b.addEventListener('click',()=>{ lbF=b; $('#lbi').src=b.dataset.full; $('#lbi').alt=b.dataset.title+' infographic'; $('#lbt').textContent=b.dataset.title; $('#lba').href=b.dataset.href; lb.hidden=false; $('#lbs').scrollTop=0; document.documentElement.style.overflow='hidden'; }));
+function closeLB(){ lb.hidden=true; document.documentElement.style.overflow=''; if(lbF) lbF.focus({preventScroll:true}); }
+$('#lbx').addEventListener('click',closeLB); document.addEventListener('keydown',e=>{ if(e.key==='Escape' && !lb.hidden) closeLB(); });
+
+/* ---------- boot ---------- */
+let rzT, lastW=0;
+function onResize(){ const w=innerWidth; const wasMob=MOB; sizeStage(); if((w<820)!==(lastW<820) || !P.length){ initParticles(); } lastW=w; }
+addEventListener('resize',()=>{ clearTimeout(rzT); rzT=setTimeout(onResize,150); });
+onResize(); updateSim();
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>cache.clear());
+requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
